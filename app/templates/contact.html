@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% load static %}
+{% block content %}
+<div class="row my-2">
+    <div class="col-4 text-center my-5 text-light">
+        <h1 class="mt-5"> Stay connected..... </h1>
+        <h3 class="mt-5"> +91 9648484831</h3>
+        <h3 class="mt-3"> himanshut1806@gmail.com</h3>
+        <div class="d-flex justify-content-center align-items-center mt-5">
+            <a href="https://www.linkedin.com/in/himanshut1806" target="_blank" class="ms-3">
+                <img src="{% static 'images/linkendin.png' %}" alt="linkedin" width="50" height="50" class="social_links">
+            </a>
+        </div>
+    </div>
+    <div class="col-5 offset-1 mt-3">
+        <div class="container form-container">
+            <form action="{% url 'contact1' %}" method="post">
+                {% csrf_token %}
+                <div class="form-group m-3">
+                    <label for="name">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" required>
+                </div>
+                <div class="form-group m-3">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email" name="email" required>
+                </div>
+                <div class="form-group m-3">
+                    <label for="phone">Mobile no:</label>
+                    <input type="tel" class="form-control" id="phone" name="phone" required>
+                </div>
+                <div class="form-group m-3">
+                    <label for="msg">Message:</label>
+                    <textarea placeholder="Type Your Message......" class="form-control" id="msg" name="message" rows="2" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock content %}

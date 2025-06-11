@@ -1,0 +1,80 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div class="row my-5">
+  <div class="col-4 d-flex justify-content-center align-items-center">
+    <img
+      src="{% static 'images/im.jpg' %}"
+      alt="images"
+      class="about_image"
+      width="50"
+      height="50"
+      class="social_links"
+    />
+  </div>
+  <div class="col-7 text-left text-light">
+    <h2>Hello !</h2>
+    <p class="fs-5">
+      As a Python Development Intern at Augurs Technology, I am gaining
+      hands-on experience in developing, testing, and optimizing Python-based
+      applications. My responsibilities include collaborating with senior
+      developers on various projects, writing clean and efficient code, and
+      troubleshooting technical issues to ensure optimal performance.</p>
+      <p class="fs-5">
+      Previously, I worked as a Java Developer Intern, where I developed and
+      maintained Java applications, participated in code reviews, and enhanced
+      my problem-solving skills.
+    </p>
+  </div>
+</div>
+<div class= "row my-2">
+    <h2 class="text-center" style="color:#4fffb0"> My Tech Stack </h2>
+    <div class="d-flex justify-content-around align-items-center">
+        <img
+            src="{% static 'images/html.png' %}"
+            width="70"
+            height="70"
+            alt="HTML Logo"
+            class="img-fluid"
+        />
+  
+        <img
+            src="{% static 'images/css.png' %}"
+            width="70"
+            height="70"
+            alt="CSS Logo"
+            class="img-fluid"
+        />
+  
+        <img
+            src="{% static 'images/bootstrap.png' %}"
+            width="70"
+            height="70"
+            alt="Bootstrap Logo"
+            class="img-fluid"
+        /> 
+  
+        <img
+            src="{% static 'images/python.jpg' %}"
+            width="60"
+            height="60"
+            alt="Python Logo"
+            class="img-fluid"
+        />
+  
+        {% comment %} <img
+            src="{% static 'images/react.png' %}"
+            width="60"
+            height="60"
+            alt="React Logo"
+            class="img-fluid"
+        /> {% endcomment %}
+  
+        <img
+            src="{% static 'images/download.png' %}"
+            width="70"
+            height="70"
+            alt="Django Logo"
+            class="img-fluid"
+        />
+    </div>
+</div>
+{% endblock content %}
