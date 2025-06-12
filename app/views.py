@@ -40,13 +40,15 @@ def experience(request):
         {
             'company': 'Augurs Technology Pvt.Ltd',
             'position': 'Python Developer Intern',
-            'Duration': '6 Months',
+            'description': 'Click here to view Certificate',
+            'Duration': 'December 2024 - Present',
             'Location': 'Lucknow',
         },
         {
             'company': 'OPL Innovate',
             'position': 'Java Developer Intern',
-            'Duration': '3 Months',
+            'description': 'Click here to view Certificate',
+            'Duration': 'March 2024 - June 2024 (3 Months)',
             'Location': 'Ahmedabad',
             'certificate_url': 'https://drive.google.com/file/d/1ZeikDHUTnc_Xx8WLgLR3KhB-ISy92upt/view?usp=drivesdk'
         },
@@ -54,7 +56,28 @@ def experience(request):
     return render(request, "experience.html", {"experience": experience})
 
 def certificate(request):
-    return render (request, "certificate.html")
+    certificates = [
+        {
+            'title': 'Python',
+            'description': 'Certificate in Python Programming',
+            'url': 'https://drive.google.com/file/d/1_ZlZV-krY1TQCCY_vCUz-34EehBNDST5/view?usp=drivesdk',
+            'icon': 'fas fa-certificate text-success',
+        },
+        {
+            'title': 'Python Udemy Certificate',
+            'description': 'Certificate in Python',
+            'url': 'https://drive.google.com/file/d/1_aHGh20xQjR404rWTxT0ve9sohKcIhZp/view?usp=drivesdk',
+            'icon': 'fas fa-certificate text-primary',
+        },
+        {
+            'title': 'National IP Awareness Mission',
+            'description': 'Certificate in National IP Awareness Mission',
+            'url': 'https://drive.google.com/file/d/119A81H2PKeWijGWS455Brg_rnPoeKxo7/view?usp=drivesdk',
+            'icon': 'fas fa-certificate text-info',
+        },
+    ]
+    return render(request, "certificate.html", {"certificates": certificates})
+
 
 def contact(request):
     return render (request,"contact.html")

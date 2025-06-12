@@ -1,19 +1,22 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="row">
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <h1 class="display4"> Web Development </h1>
+<div class="container mt-4">
+    <h1 class="text-center mb-5 text-white">My Certificates</h1>
+    <div class="row g-4">
+        {% for cert in certificates %}
+        <div class="col-md-4">
+            <div class="card shadow rounded-3 h-100 border-{{ forloop.counter|default:1|stringformat:'s'|slice:':5' }}">
+                <a href="{{ cert.url }}" class="text-decoration-none text-dark" target="_blank">
+                    <div class="card-body text-center">
+                        <h2 class="card-title display-5 mb-3">{{ cert.title }}</h2>
+                        <p class="card-text">{{ cert.description }}</p>
+                        <i class="{{ cert.icon }} fa-3x"></i>
+                    </div>
+                </a>
+            </div>
+        </div>
+        {% endfor %}
     </div>
-
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <h1 class="display4"> Python </h1>
-    </div>
-
-    <div class="jumbtron jumbtron-fluid mt-2">
-        <h1 class="display4"> National Awareness IP Mission </h1>
-    </div>
-
 </div>
-
 {% endblock content %}
