@@ -58,20 +58,23 @@ def experience(request):
 def certificate(request):
     certificates = [
         {
-            'title': 'Python',
+            'title': 'Python Programming',
             'description': 'Certificate in Python Programming',
+            'click': 'Click here to view Certificate',
             'url': 'https://drive.google.com/file/d/1_ZlZV-krY1TQCCY_vCUz-34EehBNDST5/view?usp=drivesdk',
             'icon': 'fas fa-certificate text-success',
         },
         {
             'title': 'Python Udemy Certificate',
             'description': 'Certificate in Python',
+            'click': 'Click here to view Certificate',
             'url': 'https://drive.google.com/file/d/1_aHGh20xQjR404rWTxT0ve9sohKcIhZp/view?usp=drivesdk',
             'icon': 'fas fa-certificate text-primary',
         },
         {
             'title': 'National IP Awareness Mission',
             'description': 'Certificate in National IP Awareness Mission',
+            'click': 'Click here to view Certificate',
             'url': 'https://drive.google.com/file/d/119A81H2PKeWijGWS455Brg_rnPoeKxo7/view?usp=drivesdk',
             'icon': 'fas fa-certificate text-info',
         },
