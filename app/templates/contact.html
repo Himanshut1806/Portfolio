@@ -1,40 +1,86 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div class="row my-2">
-    <div class="col-4 text-center my-5 text-light">
-        <h1 class="mt-5"> Stay connected..... </h1>
-        <h3 class="mt-5"> +91 9648484831</h3>
-        <h3 class="mt-3"> himanshut1806@gmail.com</h3>
-        <div class="d-flex justify-content-center align-items-center mt-5">
-            <a href="https://www.linkedin.com/in/himanshut1806" target="_blank" class="ms-3">
-                <img src="{% static 'images/linkendin.png' %}" alt="linkedin" width="50" height="50" class="social_links">
-            </a>
-        </div>
+<div class="row justify-content-center align-items-center my-5 py-4">
+  <div class="col-md-4 col-10 mb-4 mb-md-0">
+    <div class="card shadow-lg p-4 bg-dark text-light rounded-4">
+      <h2 class="text-center mb-4 display-5">
+        <i class="fas fa-envelope-open-text me-2"></i>
+        Stay Connected
+      </h2>
+      <div class="text-center my-3">
+        <i class="fas fa-phone-alt me-2 fa-lg"></i>
+        <span class="fs-4">+91 9648484831</span>
+      </div>
+      <div class="text-center my-3">
+        <i class="fas fa-envelope me-2 fa-lg"></i>
+        <span class="fs-4">himanshut1806@gmail.com</span>
+      </div>
+      <div class="d-flex justify-content-center align-items-center mt-4">
+        <a href="https://www.linkedin.com/in/himanshut1806" target="_blank" class="btn btn-outline-primary rounded-circle me-3 p-3">
+          <i class="fab fa-linkedin fa-lg"></i>
+        </a>
+      </div>
     </div>
-    <div class="col-5 offset-1 mt-3">
-        <div class="container form-container">
-            <form action="{% url 'contact1' %}" method="post">
-                {% csrf_token %}
-                <div class="form-group m-3">
-                    <label for="name">Name:</label>
-                    <input type="text" class="form-control" id="name" name="name" required>
-                </div>
-                <div class="form-group m-3">
-                    <label for="email">Email:</label>
-                    <input type="email" class="form-control" id="email" name="email" required>
-                </div>
-                <div class="form-group m-3">
-                    <label for="phone">Mobile no:</label>
-                    <input type="tel" class="form-control" id="phone" name="phone" required>
-                </div>
-                <div class="form-group m-3">
-                    <label for="msg">Message:</label>
-                    <textarea placeholder="Type Your Message......" class="form-control" id="msg" name="message" rows="2" required></textarea>
-                </div>
-                <button type="submit" class="btn btn-primary">Submit</button>
-            </form>
+  </div>
+
+  <div class="col-md-6 col-10">
+    <div class="card shadow-lg p-4 bg-dark text-light rounded-4">
+      <h2 class="text-center mb-4 display-5">
+        <i class="fas fa-paper-plane me-2"></i>
+        Get In Touch
+      </h2>
+      <form action="{% url 'contact1' %}" method="post">
+        {% csrf_token %}
+        <div class="form-group mb-3">
+          <label for="name" class="form-label">Name:</label>
+          <input type="text" class="form-control bg-dark text-light border-secondary" id="name" name="name" required>
         </div>
+        <div class="form-group mb-3">
+          <label for="email" class="form-label">Email:</label>
+          <input type="email" class="form-control bg-dark text-light border-secondary" id="email" name="email" required>
+        </div>
+        <div class="form-group mb-3">
+          <label for="phone" class="form-label">Mobile no:</label>
+          <input type="tel" class="form-control bg-dark text-light border-secondary" id="phone" name="phone" required>
+        </div>
+        <div class="form-group mb-4">
+          <label for="msg" class="form-label">Message:</label>
+          <textarea placeholder="Type Your Message......" class="form-control bg-dark text-light border-secondary" id="msg" name="message" rows="3" required></textarea>
+        </div>
+        <div class="text-center">
+          <button type="submit" class="btn btn-primary px-4 py-2">
+            <i class="fas fa-paper-plane me-2"></i>
+            Submit
+          </button>
+        </div>
+      </form>
     </div>
+  </div>
 </div>
+
+<style>
+  .card {
+    transition: all 0.3s ease;
+  }
+  .card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.3);
+  }
+  .form-control {
+    transition: all 0.2s ease;
+  }
+  .form-control:focus {
+    border-color: #4fffb0;
+    box-shadow: 0 0 0 0.25rem rgba(79, 255, 176, 0.25);
+  }
+  .btn-outline-primary:hover {
+    background-color: #0d6efd;
+    color: #fff;
+  }
+  body {
+    background: #121212;
+    color: #fff;
+  }
+</style>
 {% endblock content %}
