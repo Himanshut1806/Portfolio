@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.contrib.staticfiles.storage import staticfiles_storage
-from .models import Contact2
+from .models import Contact
 # Create your views here.
 
 def home(request):
@@ -101,7 +101,7 @@ def contact1(request):
         email = request.POST.get('email')
         phone = request.POST.get('phone')
         message = request.POST.get('message')
-        en = Contact2(name=name, email=email, phone=phone, message=message)
+        en = Contact(name=name, email=email, phone=phone, message=message)
         en.save()
         return render(request, 'contact.html', {'success': True})
-    return render(request, 'contact.html')
+    return render(request, 'contact.html')  
