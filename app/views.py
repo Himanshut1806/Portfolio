@@ -65,7 +65,7 @@ def certificate(request):
             'icon': 'fas fa-certificate text-success',
         },
         {
-            'title': 'Python Udemy Certificate',
+            'title': 'Python Udemy Bootcamp',
             'description': 'Certificate in Python',
             'click': 'Click here to view Certificate',
             'url': 'https://drive.google.com/file/d/1_aHGh20xQjR404rWTxT0ve9sohKcIhZp/view?usp=drivesdk',
