@@ -85,15 +85,15 @@ def certificate(request):
 def contact(request):
     return render (request,"contact.html")
 
-def resume(request):
-    resume_path = "myapp/Himanshu_s_Resume.pdf"
-    if staticfiles_storage.exists(resume_path):
-        with staticfiles_storage.open(resume_path, "rb") as resume_file:
-            response = HttpResponse(resume_file.read(), content_type="application/pdf")
-            response['Content-Disposition'] = 'attachment; filename="Himanshu_s_Resume.pdf"'
-            return response
-    else:
-        return HttpResponse("resume not found", status=404)  
+# def resume(request):
+#     resume_path = "myapp/Himanshu_s_Resume.pdf"
+#     if staticfiles_storage.exists(resume_path):
+#         with staticfiles_storage.open(resume_path, "rb") as resume_file:
+#             response = HttpResponse(resume_file.read(), content_type="application/pdf")
+#             response['Content-Disposition'] = 'attachment; filename="Himanshu_s_Resume.pdf"'
+#             return response
+#     else:
+#         return HttpResponse("resume not found", status=404)  
 
 def contact1(request):
     if request.method == 'POST':
