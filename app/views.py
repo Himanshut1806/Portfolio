@@ -41,7 +41,7 @@ def experience(request):
             'company': 'Augurs Technology Pvt.Ltd',
             'position': 'Python Developer Intern',
             'description': 'Click here to view Certificate',
-            'Duration': 'December 2024 - Present',
+            'Duration': 'December 2024 - July 2025',
             'Location': 'Lucknow',
         },
         {
