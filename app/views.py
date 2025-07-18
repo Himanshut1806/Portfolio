@@ -20,7 +20,7 @@ def projects(request):
         {
             'title':'Ecommerce',
             'path':'images/web.png',
-        },
+        },  
 
         {
             'title': 'CRUD',
