@@ -38,22 +38,32 @@ def projects(request):
 def experience(request):
     experience = [
         {
-            'company': 'Augurs Technology Pvt.Ltd',
-            'position': 'Python Developer Intern',
-            'description': 'Click here to view Certificate',
-            'Duration': 'December 2024 - July 2025',
-            'Location': 'Lucknow',
+        "company": "RR Corporate Pvt. Ltd.",
+        "position": "Python Developer",
+        "Duration": "Aug 2025 – Present",
+        "Location": "Lucknow, India",
+        "description": "Working on backend development, Python-based feature implementation, and application maintenance to ensure efficient and scalable system workflows.",
+        "certificate_url": "#"
         },
         {
-            'company': 'OPL Innovate',
-            'position': 'Java Developer Intern',
-            'description': 'Click here to view Certificate',
-            'Duration': 'March 2024 - June 2024 (3 Months)',
-            'Location': 'Ahmedabad',
-            'certificate_url': 'https://drive.google.com/file/d/1ZeikDHUTnc_Xx8WLgLR3KhB-ISy92upt/view?usp=drivesdk'
+        "company": "Augurs Technology Pvt. Ltd.",
+        "position": "Python Developer Intern",
+        "Duration": "Dec 2024 – Jul 2025",
+        "Location": "Lucknow, India",
+        "description": "Collaborated on Python and Django applications focusing on code quality, debugging, optimization, and working closely with senior developers for feature development.",
+        "certificate_url": "https://drive.google.com/file/d/1hFAo6_f6GbCRac7XEG_ZeTTj4wbb_gR6/view?usp=drivesdks"
         },
-    ]
+        {
+        "company": "OPL Innovate",
+        "position": "Java Developer Intern",
+        "Duration": "Mar 2024 – Jun 2024",
+        "Location": "Ahmedabad, India",
+        "description": "Handled MySQL databases, optimized SQL queries, and contributed to backend application logic and reporting features.",
+        "certificate_url":"https://drive.google.com/file/d/1ZeikDHUTnc_Xx8WLgLR3KhB-ISy92upt/view?usp=drivesdk"
+        }
+        ]
     return render(request, "experience.html", {"experience": experience})
+
 
 def certificate(request):
     certificates = [
@@ -85,15 +95,15 @@ def certificate(request):
 def contact(request):
     return render (request,"contact.html")
 
-# def resume(request):
-#     resume_path = "myapp/Himanshu_s_Resume.pdf"
-#     if staticfiles_storage.exists(resume_path):
-#         with staticfiles_storage.open(resume_path, "rb") as resume_file:
-#             response = HttpResponse(resume_file.read(), content_type="application/pdf")
-#             response['Content-Disposition'] = 'attachment; filename="Himanshu_s_Resume.pdf"'
-#             return response
-#     else:
-#         return HttpResponse("resume not found", status=404)  
+def resume(request):
+    resume_path = "myapp/Himanshu_s_Resume.pdf"
+    if staticfiles_storage.exists(resume_path):
+        with staticfiles_storage.open(resume_path, "rb") as resume_file:
+            response = HttpResponse(resume_file.read(), content_type="application/pdf")
+            response['Content-Disposition'] = 'attachment; filename="Himanshu_s_Resume.pdf"'
+            return response
+    else:
+        return HttpResponse("resume not found", status=404)  
 
 def contact1(request):
     if request.method == 'POST':
