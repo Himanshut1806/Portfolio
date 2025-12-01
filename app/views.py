@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from django.http import HttpResponse
-from django.contrib.staticfiles.storage import staticfiles_storage
 from .models import Contact
+from django.http import FileResponse, Http404
+import os
+from django.conf import settings
 # Create your views here.
 
 def home(request):
@@ -96,14 +98,13 @@ def contact(request):
     return render (request,"contact.html")
 
 def resume(request):
-    resume_path = "myapp/Himanshu_s_Resume.pdf"
-    if staticfiles_storage.exists(resume_path):
-        with staticfiles_storage.open(resume_path, "rb") as resume_file:
-            response = HttpResponse(resume_file.read(), content_type="application/pdf")
-            response['Content-Disposition'] = 'attachment; filename="Himanshu_s_Resume.pdf"'
-            return response
+    # PDF ka exact path yahan set hota hai
+    file_path = os.path.join(settings.BASE_DIR, "app", "static", "myapp", "Himanshu_Resume.pdf")
+
+    if os.path.exists(file_path):
+        return FileResponse(open(file_path, "rb"), content_type="application/pdf")
     else:
-        return HttpResponse("resume not found", status=404)  
+        raise Http404("Resume not found")
 
 def contact1(request):
     if request.method == 'POST':
