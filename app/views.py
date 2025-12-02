@@ -84,7 +84,7 @@ def experience(request):
         "Duration": "Aug 2025 – Present",
         "Location": "Lucknow, India",
         "description": "Working on backend development, Python-based feature implementation, and application maintenance to ensure efficient and scalable system workflows.",
-        "certificate_url": "#"
+        "certificate_url": None 
         },
         {
         "company": "Augurs Technology Pvt. Ltd.",

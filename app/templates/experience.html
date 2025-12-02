@@ -8,33 +8,42 @@
     <div class="row g-4">
         {% for eachitem in experience %}
         <div class="col-md-6">
-            <a href="{{ eachitem.certificate_url }}" target="_blank" class="text-decoration-none">
-                <div class="card experience-card shadow-lg h-100">
-                    <div class="card-body p-4">
 
-                        <!-- Company & Duration -->
-                        <div class="d-flex justify-content-between align-items-start mb-3">
-                            <h2 class="h3 text-primary">{{ eachitem.company }}</h2>
-                            <span class="badge bg-success">{{ eachitem.Duration }}</span>
-                        </div>
+            <div class="card experience-card shadow-lg h-100">
+                <div class="card-body p-4">
 
-                        <!-- Position -->
-                        <h3 class="h5 text-secondary mb-3">{{ eachitem.position }}</h3>
-
-                        <!-- Description (professional text from resume) -->
-                        <p class="text-light mb-3" style="font-size: 1rem;">
-                            {{ eachitem.description }}
-                        </p>
-
-                        <!-- Location -->
-                        <div class="d-flex align-items-center">
-                            <i class="fas fa-map-marker-alt me-2 text-danger"></i>
-                            <span>{{ eachitem.Location }}</span>
-                        </div>
-
+                    <!-- Company & Duration -->
+                    <div class="d-flex justify-content-between align-items-start mb-3">
+                        <h2 class="h3 text-primary">{{ eachitem.company }}</h2>
+                        <span class="badge bg-success">{{ eachitem.Duration }}</span>
                     </div>
+
+                    <!-- Position -->
+                    <h3 class="h5 text-secondary mb-3">{{ eachitem.position }}</h3>
+
+                    <!-- Description -->
+                    <p class="text-light mb-3" style="font-size: 1rem;">
+                        {{ eachitem.description }}
+                    </p>
+
+                    <!-- Certificate Button -->
+                    {% if eachitem.certificate_url %}
+                    <a href="{{ eachitem.certificate_url }}" 
+                       target="_blank" 
+                       class="btn btn-outline-primary btn-sm mb-3">
+                        Click here to view Certificate
+                    </a>
+                    {% endif %}
+
+                    <!-- Location -->
+                    <div class="d-flex align-items-center">
+                        <i class="fas fa-map-marker-alt me-2 text-danger"></i>
+                        <span>{{ eachitem.Location }}</span>
+                    </div>
+
                 </div>
-            </a>
+            </div>
+
         </div>
         {% endfor %}
     </div>
