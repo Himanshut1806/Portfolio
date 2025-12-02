@@ -2,12 +2,59 @@
 {% load static %}
 {% block content %}
 
-<div class="row my-2">
-    {% for project in projects_show %}
-<div class="col-6">
-    <h4 class="text-light"> {{project.title}} </h4>
-    <img src="{% static project.path %}" width="500" height="800" class="img-fluid">
+<div class="container my-5">
+
+    <h1 class="text-center mb-5 text-white">My Projects</h1> 
+
+    <div class="row g-4">
+        {% for project in projects_show %}
+        <div class="col-md-6">
+            <a href="{{ project.github }}" target="_blank" class="text-decoration-none">
+                <div class="card project-card shadow-lg h-100">
+                    <div class="card-body p-4">
+
+                        <!-- PROJECT TITLE -->
+                        <h2 class="h3 text-dark mb-3">{{ project.title }}</h2>
+
+                        <!-- DESCRIPTION -->
+                        <p class="text-dark" style="font-size: 1rem;">
+                            {{ project.desc }}
+                        </p>
+
+                        <!-- GITHUB LINK -->
+                        <div class="mt-3 d-flex align-items-center">
+                            <i class="fab fa-github text-dark me-2"></i>
+                            <span class="text-primary">View on GitHub</span>
+                        </div>
+
+                    </div>
+                </div>
+            </a>
+        </div>
+        {% endfor %}
+    </div>
 </div>
-{% endfor %}
-</div>
+
 {% endblock content %}
+
+<style>
+/* Card with White Background */
+.project-card {
+    background: #ffffff !important;
+    border-radius: 12px;
+    border: 1px solid rgba(0,0,0,0.15);
+    transition: 0.3s ease-in-out;
+}
+
+/* Hover Effect */
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    border-color: rgba(0,0,0,0.25);
+}
+
+/* Page Background */
+body {
+    background: #121212;
+} 
+</style>

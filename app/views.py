@@ -13,29 +13,68 @@ def about(request):
     return render (request,"about.html")
 
 def projects(request):
-    projects_show=[
+    projects_show = [
+
         {
-            'title': 'Portfolio',
-            'path': 'images/portfolio.png',
+            'title': 'Portfolio Website',
+            'desc': 'A personal portfolio built using Django to showcase skills, experience, and projects with a clean UI.',
+            'github': 'https://github.com/Himanshut1806/Portfolio'
         },
-
         {
-            'title':'Ecommerce',
-            'path':'images/web.png',
-        },  
-
-        {
-            'title': 'CRUD',
-            'path': 'images/CRUD.PNG',
+            'title': 'E-commerce Platform (AShopping)',
+            'desc': 'Full Django-based e-commerce system with cart, checkout, session-based cart updates, and Stripe payment integration.',
+            'github': 'https://github.com/Himanshut1806/AShopping'
         },
-
         {
-            'title':'Blog Project',
-            'path':'images/Blogs.png',
+            'title': 'Blog Project',
+            'desc': 'A complete blogging system with authentication, CRUD operations, categories, and modern Bootstrap UI.',
+            'github': 'https://github.com/Himanshut1806/Blog-Project'
         },
-
+        {
+            'title': 'Secure Notes App',
+            'desc': 'A Django application for encrypted note storage with authentication and data protection.',
+            'github': 'https://github.com/Himanshut1806/Secure-Notes'
+        },
+        {
+            'title': 'Employee CRUD System',
+            'desc': 'A CRUD-based Django web app to manage employee records including add, update, and delete functionality.',
+            'github': 'https://github.com/Himanshut1806/Employee-CRUD-Operation'
+        },
+        {
+            'title': 'JWT Authentication (Custom User)',
+            'desc': 'A Django REST Framework project implementing JWT authentication with a custom user model.',
+            'github': 'https://github.com/Himanshut1806/JWT-Authentication-Custom-User-Model'
+        },
+        {
+            'title': 'DRF API Project',
+            'desc': 'A Django REST Framework API project demonstrating serializers, viewsets, and API CRUD operations.',
+            'github': 'https://github.com/Himanshut1806/DRF-Project'
+        },
+        {
+            'title': 'Django REST Framework Demo',
+            'desc': 'An API-driven project showing DRF basics including permissions, authentication, and API routing.',
+            'github': 'https://github.com/Himanshut1806/Django-Rest-Framework'
+        },
+        {
+            'title': 'Student CRUD Operation',
+            'desc': 'A simple and clean Django CRUD app for managing student data with SQLite database.',
+            'github': 'https://github.com/Himanshut1806/Student-CRUD-Opertion'
+        },
+        {
+            'title': 'StudyBud Community App',
+            'desc': 'A full-stack community discussion platform built using Django, featuring rooms, topics, login & activity feed.',
+            'github': 'https://github.com/Himanshut1806/Studybud'
+        },
+        {
+            'title': 'Django CRUD',
+            'desc': 'A classic CRUD project implementing create, read, update, and delete operations using Django.',
+            'github': 'https://github.com/Himanshut1806/Django-CRUD'
+        }
     ]
-    return render (request,"projects.html",{"projects_show": projects_show})
+    return render(request, "projects.html", {'projects_show': projects_show})
+
+
+
 
 def experience(request):
     experience = [
@@ -98,7 +137,6 @@ def contact(request):
     return render (request,"contact.html")
 
 def resume(request):
-    # PDF ka exact path yahan set hota hai
     file_path = os.path.join(settings.BASE_DIR, "app", "static", "myapp", "Himanshu_Resume.pdf")
 
     if os.path.exists(file_path):
